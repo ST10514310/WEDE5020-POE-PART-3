@@ -1,0 +1,803 @@
+/* ===================================================
+   Sweet Harvest Bakery - styles.css
+   Colours and fonts based on the approved proposal:
+   cream background, gold accent, brown headings
+   Poppins for headings, Lora for paragraphs
+
+   PART 2 NOTES (CSS Styling and Responsive Design):
+   - Font sizes use rem so everything scales together
+     if a user changes their browser's default font size.
+   - Breakpoints: desktop (default), tablet (max-width:
+     900px), mobile (max-width: 600px).
+   - The footer uses CSS Grid with named grid-template-areas
+     as its layout technique; most other sections use
+     Flexbox, to show both layout methods.
+   =================================================== */
+
+/* colours and sizes I use again and again, so I don't
+   have to retype them everywhere */
+:root {
+  --cream: #FDF6EC;
+  --gold: #C9A24B;
+  --brown: #5C3A21;
+  --sand: #F2E6D3;
+  --dark-text: #3A2C22;
+
+  /* base spacing unit - other spacing is a multiple of this */
+  --space: 1rem;
+}
+
+/* -------- base style / reset --------
+   A small reset so the site looks consistent across
+   different browsers, instead of relying on each
+   browser's own default spacing. */
+* {
+  box-sizing: border-box;
+}
+
+html {
+  /* 1rem = 16px by default, so all rem values below are
+     relative to this and will scale if the user changes
+     their browser's default font size */
+  font-size: 100%;
+  scroll-behavior: smooth;
+}
+
+body, h1, h2, h3, p, ul, figure {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  color: var(--dark-text);
+  background-color: var(--cream);
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+/* -------- typography scale --------
+   Headings use rem so the whole scale grows/shrinks
+   together, and a bit of letter-spacing on headings
+   for a slightly more polished look. */
+h1, h2, h3 {
+  font-family: 'Poppins', sans-serif;
+  color: var(--brown);
+  line-height: 1.25;
+  letter-spacing: 0.01em;
+}
+
+h1 { font-size: 2.25rem; }   /* 36px */
+h2 { font-size: 1.75rem; }   /* 28px */
+h3 { font-size: 1.25rem; }   /* 20px */
+
+p {
+  margin-bottom: 1em;
+}
+
+/* keeps the content from stretching too wide on big screens */
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.25rem;
+}
+
+/* -------- buttons -------- */
+.btn {
+  display: inline-block;
+  padding: 0.75em 1.5em;
+  border-radius: 25px;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 1rem;
+  border: 2px solid transparent;
+  cursor: pointer;
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(58, 44, 34, 0.2);
+}
+
+.btn:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.btn:focus {
+  outline: 3px solid var(--gold);
+  outline-offset: 2px;
+}
+
+.btn:disabled {
+  background-color: #d9d2c2;
+  color: #8a7d6a;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.btn-primary {
+  background-color: var(--gold);
+  color: var(--dark-text);
+}
+
+.btn-order {
+  background-color: var(--brown);
+  color: white;
+}
+
+.btn-outline {
+  background-color: transparent;
+  border: 2px solid var(--brown);
+  color: var(--brown);
+}
+
+/* -------- header / nav -------- */
+.site-header {
+  background-color: white;
+  border-bottom: 3px solid var(--gold);
+}
+
+.site-header .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  font-size: 1.25rem;
+  color: var(--brown);
+}
+
+.logo img {
+  width: 40px;
+  margin-right: 0.6rem;
+}
+
+/* hamburger button, hidden on desktop */
+.nav-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.nav-toggle span {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background-color: var(--brown);
+  margin: 5px 0;
+}
+
+.main-nav ul {
+  display: flex;
+  gap: 1.5rem;
+  align-items: center;
+}
+
+.main-nav a {
+  text-decoration: none;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--dark-text);
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.main-nav a:hover,
+.main-nav a:focus {
+  color: var(--gold);
+  border-bottom-color: var(--gold);
+}
+
+/* -------- hero section -------- */
+.hero {
+  background-color: var(--sand);
+  padding: 3.2rem 0;
+}
+
+.hero .container {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.9rem;
+}
+
+.hero-copy {
+  flex: 1 1 400px;
+}
+
+.hero-media {
+  flex: 1 1 350px;
+}
+
+.hero-actions {
+  margin-top: 1.25rem;
+}
+
+.hero-actions .btn {
+  margin-right: 0.6rem;
+  margin-bottom: 0.6rem;
+}
+
+/* -------- highlights / stats bar -------- */
+.stats {
+  background-color: var(--brown);
+  color: white;
+  padding: 1.9rem 0;
+  text-align: center;
+}
+
+.stats .container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+}
+
+.stats .stat-number {
+  display: block;
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.75rem;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+/* -------- generic section spacing -------- */
+section {
+  padding: 2.8rem 0;
+}
+
+.section-heading {
+  text-align: center;
+  margin-bottom: 1.9rem;
+}
+
+.bg-sand {
+  background-color: var(--sand);
+}
+
+/* -------- product / feature cards -------- */
+.card-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  justify-content: center;
+}
+
+.card {
+  background-color: white;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1 1 280px;
+  max-width: 320px;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 6px rgba(58, 44, 34, 0.08);
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.card:hover {
+  box-shadow: 0 8px 18px rgba(58, 44, 34, 0.15);
+  transform: translateY(-3px);
+}
+
+/* a subtle alternating tint on the media background,
+   just to show nth-child in use alongside hover/focus/active */
+.card:nth-child(even) .card-media {
+  background-color: #ecdfc4;
+}
+
+.card-media {
+  background-color: var(--sand);
+  height: 200px;
+  overflow: hidden;
+}
+
+.card-media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.card-body {
+  padding: 1.1rem;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.card-tag {
+  display: inline-block;
+  background-color: var(--sand);
+  color: var(--brown);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.2em 0.6em;
+  border-radius: 12px;
+  margin-bottom: 0.5rem;
+  align-self: flex-start;
+}
+
+.card-price {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+  color: var(--gold);
+}
+
+.card-body .btn {
+  margin-top: auto;
+  align-self: flex-start;
+}
+
+/* -------- filter buttons on products page -------- */
+.filter-bar {
+  display: flex;
+  gap: 0.6rem;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 1.9rem;
+}
+
+.filter-btn {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1rem;
+  background-color: white;
+  border: 2px solid var(--sand);
+  padding: 0.5em 1.1em;
+  border-radius: 20px;
+  cursor: pointer;
+  transition: border-color 0.15s ease;
+}
+
+.filter-btn:hover,
+.filter-btn:focus {
+  border-color: var(--gold);
+}
+
+.filter-btn:active {
+  transform: scale(0.97);
+}
+
+.filter-btn.is-active {
+  background-color: var(--gold);
+  border-color: var(--gold);
+}
+
+/* -------- two column layout (about page) -------- */
+.split {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.9rem;
+}
+
+.split-copy, .split-media {
+  flex: 1 1 400px;
+}
+
+.value-list {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.value-list li {
+  margin-bottom: 0.75rem;
+  padding-left: 1.6rem;
+  position: relative;
+}
+
+/* small tick mark before each value using a simple character */
+.value-list li::before {
+  content: "\2713";
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-weight: bold;
+}
+
+/* -------- call to action box -------- */
+.cta-banner {
+  background-color: var(--brown);
+  color: white;
+  text-align: center;
+  padding: 2.5rem 1.25rem;
+  border-radius: 8px;
+}
+
+.cta-banner h2 {
+  color: white;
+}
+
+/* -------- forms -------- */
+.form-card {
+  background-color: white;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  padding: 1.6rem;
+}
+
+.form-row {
+  margin-bottom: 0.9rem;
+}
+
+.form-row label {
+  display: block;
+  font-weight: 700;
+  font-family: 'Poppins', sans-serif;
+  font-size: 0.9rem;
+  margin-bottom: 0.3rem;
+}
+
+.form-row input,
+.form-row select,
+.form-row textarea {
+  width: 100%;
+  padding: 0.6em;
+  border: 1px solid var(--sand);
+  border-radius: 5px;
+  font-family: 'Lora', serif;
+  font-size: 1rem;
+  background-color: var(--cream);
+}
+
+.form-row input:focus,
+.form-row select:focus,
+.form-row textarea:focus {
+  outline: 2px solid var(--gold);
+  outline-offset: 1px;
+}
+
+/* validation feedback: a required field only shows red once the
+   user has actually typed something invalid and left the field,
+   not on first load (the :placeholder-shown check avoids flagging
+   empty required fields before the user has even started) */
+.form-row input:required:invalid:not(:placeholder-shown),
+.form-row textarea:required:invalid:not(:placeholder-shown) {
+  border-color: #b23a48;
+}
+
+.form-row input:required:valid:not(:placeholder-shown),
+.form-row textarea:required:valid:not(:placeholder-shown) {
+  border-color: #6b8f5a;
+}
+
+/* disabled form fields (e.g. a sold-out option) look visibly inactive */
+.form-row input:disabled,
+.form-row select:disabled,
+.form-row textarea:disabled {
+  background-color: #ece5d6;
+  color: #8a7d6a;
+  cursor: not-allowed;
+}
+
+.two-col {
+  display: flex;
+  gap: 0.9rem;
+  flex-wrap: wrap;
+}
+
+.two-col .form-row {
+  flex: 1 1 200px;
+}
+
+.form-confirmation {
+  background-color: var(--sand);
+  padding: 0.75rem;
+  border-radius: 5px;
+  margin-top: 0.9rem;
+}
+
+/* -------- contact page maps -------- */
+.location-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.25rem;
+  margin-bottom: 1.9rem;
+}
+
+.location-card {
+  background-color: white;
+  border: 1px solid var(--sand);
+  border-radius: 8px;
+  overflow: hidden;
+  flex: 1 1 300px;
+}
+
+.location-card iframe {
+  width: 100%;
+  height: 220px;
+  border: none;
+  display: block;
+}
+
+.location-info {
+  padding: 0.9rem;
+}
+
+/* -------- footer --------
+   This section uses CSS Grid with named areas instead of
+   Flexbox, as a second layout technique, per the brief. */
+.site-footer {
+  background-color: var(--dark-text);
+  color: #e8dfd2;
+  padding: 2.5rem 0 1.25rem 0;
+  margin-top: 1.25rem;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  grid-template-areas: "about sitemap contact";
+  gap: 1.9rem;
+  margin-bottom: 1.25rem;
+}
+
+.footer-about   { grid-area: about; }
+.footer-sitemap { grid-area: sitemap; }
+.footer-contact { grid-area: contact; }
+
+.site-footer h4 {
+  color: white;
+  font-family: 'Poppins', sans-serif;
+  margin-bottom: 0.5rem;
+}
+
+.site-footer a {
+  color: #cbbfa9;
+  text-decoration: none;
+}
+
+.site-footer a:hover,
+.site-footer a:focus {
+  color: var(--gold);
+}
+
+.footer-links li {
+  margin-bottom: 0.4rem;
+}
+
+.footer-links li:last-child {
+  margin-bottom: 0;
+}
+
+.footer-logo {
+  display: flex;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.footer-logo img {
+  width: 32px;
+  margin-right: 0.5rem;
+}
+
+.footer-bottom {
+  border-top: 1px solid #55483a;
+  padding-top: 0.9rem;
+  font-size: 0.8rem;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.social-icons {
+  margin-top: 0.6rem;
+}
+
+.social-icons img {
+  width: 20px;
+  margin-right: 0.6rem;
+}
+
+/* ===================================================
+   RESPONSIVE DESIGN
+   Two breakpoints below desktop:
+   - Tablet:  screens up to 900px wide
+   - Mobile:  screens up to 600px wide
+   Layouts move from multi-column to single-column as
+   the screen gets smaller.
+   =================================================== */
+
+/* ---------- Tablet (max-width: 900px) ---------- */
+@media (max-width: 900px) {
+  h1 { font-size: 2rem; }
+  h2 { font-size: 1.5rem; }
+  h3 { font-size: 1.15rem; }
+
+  /* nav adjustment: tighten spacing and drop to a smaller
+     font so the full menu still fits on one line at tablet
+     width, before it becomes a hamburger menu on mobile */
+  .main-nav ul {
+    gap: 1rem;
+  }
+
+  .main-nav a {
+    font-size: 0.85rem;
+  }
+
+  .card-grid {
+    justify-content: flex-start;
+  }
+
+  /* image adjustment: a shorter card image on tablet, since
+     the two-column layout gives each card less width */
+  .card-media {
+    height: 170px;
+  }
+
+  /* footer grid drops from 3 columns to 2, contact
+     moves onto its own row underneath */
+  .footer-grid {
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "about    sitemap"
+      "contact  contact";
+  }
+}
+
+/* ---------- Mobile (max-width: 600px) ---------- */
+@media (max-width: 600px) {
+  .nav-toggle {
+    display: block;
+  }
+
+  .main-nav {
+    display: none;
+    width: 100%;
+  }
+
+  .main-nav.is-open {
+    display: block;
+  }
+
+  /* nav adjustment: full-width stacked links instead of a
+     horizontal row, since a hamburger menu replaces the
+     inline nav at this width */
+  .main-nav ul {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem 0;
+    gap: 0;
+  }
+
+  .main-nav a {
+    font-size: 1rem;
+    display: block;
+    width: 100%;
+    padding: 0.6rem 0;
+  }
+
+  h1 { font-size: 1.65rem; }
+  h2 { font-size: 1.3rem; }
+  h3 { font-size: 1.1rem; }
+
+  /* slightly tighter line-height and button text on small screens,
+     so paragraphs and buttons don't feel oversized on a narrow phone */
+  body { line-height: 1.55; }
+
+  .btn {
+    font-size: 0.95rem;
+    padding: 0.7em 1.3em;
+  }
+
+  .hero {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  .hero .container {
+    justify-content: center;
+  }
+
+  /* single column everywhere on small screens */
+  .card-grid,
+  .split,
+  .two-col,
+  .location-grid {
+    flex-direction: column;
+  }
+
+  /* IMPORTANT: once the parent above switches to flex-direction:
+     column, "flex: 1 1 280px" on these children would be read as
+     a HEIGHT basis instead of a width basis (main axis changes
+     with flex-direction), which clips their content. Override
+     with a plain full-width, natural-height sizing instead. */
+  .card,
+  .split-copy,
+  .split-media,
+  .location-card {
+    flex: 1 1 auto;
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .two-col .form-row {
+    flex: 1 1 auto;
+  }
+
+  /* image adjustment: a taller card image again on mobile,
+     since each card now takes the full screen width */
+  .card-media {
+    height: 200px;
+  }
+
+  .stats .container {
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  /* footer becomes a single stacked column on mobile */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "about"
+      "sitemap"
+      "contact";
+  }
+
+  .footer-bottom {
+    flex-direction: column;
+    text-align: center;
+  }
+
+  .cta-banner {
+    padding: 1.9rem 1rem;
+  }
+}
+
+/* respect users who prefer less motion */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  .btn:hover,
+  .card:hover {
+    transform: none;
+  }
+}
+
+
+/* Part 3: accessibility, search, image lightbox and FAQ */
+.skip-link { position:absolute; left:-9999px; top:auto; background:white; color:var(--brown); padding:0.7rem; z-index:2000; }
+.skip-link:focus { left:1rem; top:1rem; }
+.product-search { max-width:520px; margin:0 auto 1.4rem; text-align:center; }
+.product-search label { display:block; font-weight:700; margin-bottom:0.4rem; }
+.product-search input { width:100%; padding:0.8rem; border:1px solid #b9a88e; border-radius:6px; font:inherit; }
+#product-count { font-size:0.9rem; margin-top:0.4rem; }
+.card-media img { cursor:zoom-in; }
+.lightbox { position:fixed; inset:0; background:rgba(25,18,12,.92); display:none; align-items:center; justify-content:center; z-index:3000; padding:2rem; }
+.lightbox.is-open { display:flex; }
+.lightbox img { max-width:min(100%,1000px); max-height:85vh; object-fit:contain; }
+.lightbox button { position:absolute; top:1rem; right:1.5rem; color:white; background:transparent; border:0; font-size:2.5rem; cursor:pointer; }
+.faq-section { background:var(--cream); }
+.faq-item { max-width:850px; margin:0.8rem auto; padding:1rem; background:white; border:1px solid var(--sand); border-radius:7px; }
+.faq-item summary { cursor:pointer; font-weight:700; color:var(--brown); }
+.faq-item p { margin:0.8rem 0 0; }
+@media (max-width:600px) { .lightbox { padding:1rem; } }

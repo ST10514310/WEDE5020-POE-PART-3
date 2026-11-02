@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products | Sweet Harvest Bakery</title>
+  <meta name="description" content="Explore fresh sourdough bread, whole-wheat loaves, celebration cakes, cupcakes and pastries from Sweet Harvest Bakery.">
+  <meta name="keywords" content="bakery menu Johannesburg, fresh bread, custom cakes, cupcakes, pastries">
+  <meta name="robots" content="index, follow">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Sweet Harvest Bakery logo">
+        Sweet Harvest Bakery
+      </a>
+      <button class="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="enquiry.html" class="btn btn-order">Order Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="bg-sand">
+      <div class="container section-heading">
+        <h1>Our Menu</h1>
+        <p>Everything is baked fresh in-house every morning.</p>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+
+        <!-- buttons to filter the products below, handled in script.js -->
+        <div class="product-search">
+          <label for="product-search">Search our menu</label>
+          <input type="search" id="product-search" placeholder="Search bread, cakes or pastries..." aria-label="Search products">
+          <p id="product-count" aria-live="polite">Showing all products</p>
+        </div>
+
+        <div class="filter-bar">
+          <button class="filter-btn is-active" data-filter="all">All items</button>
+          <button class="filter-btn" data-filter="bread">Breads</button>
+          <button class="filter-btn" data-filter="cake">Cakes</button>
+          <button class="filter-btn" data-filter="pastry">Pastries</button>
+        </div>
+
+        <div class="card-grid">
+
+          <div class="card" data-category="bread">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1707915317302-9565553eea02?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1707915317302-9565553eea02?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1707915317302-9565553eea02?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1707915317302-9565553eea02?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="Freshly baked sourdough loaf on a cooling rack" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Bread</span>
+              <h3>Classic Sourdough</h3>
+              <p class="card-price">R55</p>
+              <p>Crusty on the outside, soft and tangy inside.</p>
+            </div>
+          </div>
+
+          <div class="card" data-category="bread">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1624323209995-b617d99ce390?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1624323209995-b617d99ce390?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1624323209995-b617d99ce390?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1624323209995-b617d99ce390?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="Whole-wheat loaf of bread on a table" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Bread</span>
+              <h3>Whole-Wheat Loaf</h3>
+              <p class="card-price">R48</p>
+              <p>A hearty, everyday loaf, sliced or unsliced.</p>
+            </div>
+          </div>
+
+          <div class="card" data-category="cake">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1638871894014-047605c91c16?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1638871894014-047605c91c16?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1638871894014-047605c91c16?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1638871894014-047605c91c16?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="A three-tiered celebration cake" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Cake</span>
+              <h3>Custom Celebration Cake</h3>
+              <p class="card-price">From R450</p>
+              <p>Choose your flavour, filling and design.</p>
+              <a class="btn btn-primary" href="enquiry.html">Order this</a>
+            </div>
+          </div>
+
+          <div class="card" data-category="cake">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1587834423590-f06ca6a16c4f?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1587834423590-f06ca6a16c4f?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1587834423590-f06ca6a16c4f?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1587834423590-f06ca6a16c4f?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="Assorted cupcakes on a bakery display counter" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Cake</span>
+              <h3>Cupcakes (Box of 6)</h3>
+              <p class="card-price">R180</p>
+              <p>Vanilla, chocolate or red velvet with buttercream.</p>
+              <a class="btn btn-primary" href="enquiry.html">Order this</a>
+            </div>
+          </div>
+
+          <div class="card" data-category="pastry">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1548538931-b47653628cdc?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1548538931-b47653628cdc?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1548538931-b47653628cdc?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1548538931-b47653628cdc?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="Fresh croissants on display in a bakery" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Pastry</span>
+              <h3>Butter Croissant</h3>
+              <p class="card-price">R28</p>
+              <p>Flaky, golden and buttery, baked fresh each morning.</p>
+            </div>
+          </div>
+
+          <div class="card" data-category="pastry">
+            <div class="card-media"><img src="https://images.unsplash.com/photo-1698530074926-3f0a9b442975?w=800&amp;q=80&amp;fit=crop&amp;auto=format" srcset="https://images.unsplash.com/photo-1698530074926-3f0a9b442975?w=400&amp;q=80&amp;fit=crop&amp;auto=format 400w, https://images.unsplash.com/photo-1698530074926-3f0a9b442975?w=800&amp;q=80&amp;fit=crop&amp;auto=format 800w, https://images.unsplash.com/photo-1698530074926-3f0a9b442975?w=1200&amp;q=80&amp;fit=crop&amp;auto=format 1200w" sizes="(max-width: 600px) 92vw, (max-width: 900px) 45vw, 300px" alt="A batch of freshly baked muffins" loading="lazy"></div>
+            <div class="card-body">
+              <span class="card-tag">Pastry</span>
+              <h3>Seasonal Muffins</h3>
+              <p class="card-price">R25</p>
+              <p>A rotating selection, ask what's fresh today.</p>
+              <button class="btn btn-primary" type="button" disabled title="Today's flavour is sold out — check back tomorrow">Sold out today</button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section class="bg-sand">
+      <div class="container">
+        <div class="cta-banner">
+          <h2>Don't see what you're after?</h2>
+          <p>We take custom cake orders for birthdays, weddings and events.</p>
+          <a class="btn btn-primary" href="enquiry.html">Request a custom order</a>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/logo.svg" alt="Sweet Harvest Bakery logo">
+            <strong>Sweet Harvest Bakery</strong>
+          </div>
+          <p>Wholesome, handmade baked goods for every table.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="footer-sitemap">
+          <h4>Sitemap</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>hello@sweetharvestbakery.co.za</li>
+            <li>011 555 0177</li>
+            <li>Melville, Johannesburg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sweet Harvest Bakery</span>
+        <span>Small business (fictional, for academic use)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 40" role="img" aria-label="Community icon">
+  <circle cx="13" cy="15" r="6" fill="#C9A24B"/>
+  <circle cx="27" cy="15" r="6" fill="#5C3A21"/>
+  <path d="M2 34 C2 25 8 21 13 21 C18 21 24 25 24 34 Z" fill="#C9A24B"/>
+  <path d="M16 34 C16 25 22 21 27 21 C32 21 38 25 38 34 Z" fill="#5C3A21"/>
+</svg>

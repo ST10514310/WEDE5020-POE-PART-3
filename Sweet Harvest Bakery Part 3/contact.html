@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en-ZA">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact | Sweet Harvest Bakery</title>
+  <meta name="description" content="Contact Sweet Harvest Bakery for general questions, opening information and visits to our Melville bakery.">
+  <meta name="keywords" content="contact bakery Johannesburg, Sweet Harvest Bakery, Melville bakery">
+  <meta name="robots" content="index, follow">
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700&family=Lora:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="container">
+      <a class="logo" href="index.html">
+        <img src="images/logo.svg" alt="Sweet Harvest Bakery logo">
+        Sweet Harvest Bakery
+      </a>
+      <button class="nav-toggle">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="main-nav">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About Us</a></li>
+          <li><a href="products.html">Products</a></li>
+          <li><a href="contact.html">Contact</a></li>
+          <li><a href="enquiry.html" class="btn btn-order">Order Now</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="bg-sand">
+      <div class="container section-heading">
+        <h1>Visit or Contact Us</h1>
+        <p>Find us at our Melville shopfront, or at the Saturday market in Bryanston.</p>
+      </div>
+    </section>
+
+    <!-- two locations with a map for each, as asked for in the brief -->
+    <section>
+      <div class="container">
+        <div class="location-grid">
+
+          <div class="location-card">
+            <iframe src="https://www.google.com/maps?q=Melville,Johannesburg&output=embed" title="Map of Melville shopfront"></iframe>
+            <div class="location-info">
+              <h3>Melville Shopfront</h3>
+              <p>58 4th Avenue, Melville, Johannesburg, 2109</p>
+              <p>Open Tuesday to Sunday, 07:00 - 16:00</p>
+            </div>
+          </div>
+
+          <div class="location-card">
+            <iframe src="https://www.google.com/maps?q=Bryanston,Johannesburg&output=embed" title="Map of Bryanston market stall"></iframe>
+            <div class="location-info">
+              <h3>Bryanston Market Stall</h3>
+              <p>Bryanston Organic &amp; Fine Food Market, Culross Road, Bryanston</p>
+              <p>Saturdays, 09:00 - 15:00</p>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- contact details plus a simple contact form -->
+    <section class="bg-sand">
+      <div class="container split">
+        <div class="split-copy">
+          <h2>Get in Touch</h2>
+          <p>For general questions or catering enquiries, reach us directly:</p>
+          <ul class="value-list">
+            <li>Email: hello@sweetharvestbakery.co.za</li>
+            <li>Phone: 011 555 0177</li>
+            <li>WhatsApp: 082 555 0144</li>
+          </ul>
+          <p>Want to order a cake? Please use our <a href="enquiry.html">order form</a> instead so it goes straight to our kitchen team.</p>
+        </div>
+
+        <div class="split-media">
+          <div class="form-card">
+            <form class="contact-form" action="mailto:hello@sweetharvestbakery.co.za" method="post" enctype="text/plain">
+              <div class="form-row">
+                <label for="c-name">Full name</label>
+                <input type="text" id="c-name" name="c-name" required>
+              </div>
+              <div class="form-row">
+                <label for="c-email">Email address</label>
+                <input type="email" id="c-email" name="c-email" required>
+              </div>
+              <div class="form-row">
+                <label for="c-type">Type of message</label>
+                <select id="c-type" name="Message type" required><option value="">Please select</option><option>General question</option><option>Feedback</option><option>Opening hours</option><option>Other</option></select>
+              </div>
+              <div class="form-row">
+                <label for="c-message">Full message</label>
+                <textarea id="c-message" name="c-message" rows="4" required></textarea>
+              </div>
+              <button class="btn btn-primary" type="submit">Send message</button>
+
+              <p class="form-confirmation" style="display:none;" role="status">Your email application will open with your message ready to send. Please press Send in your email application.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-about">
+          <div class="footer-logo">
+            <img src="images/logo.svg" alt="Sweet Harvest Bakery logo">
+            <strong>Sweet Harvest Bakery</strong>
+          </div>
+          <p>Wholesome, handmade baked goods for every table.</p>
+          <div class="social-icons">
+            <a href="https://facebook.com" target="_blank" rel="noopener noreferrer"><img src="images/icon-facebook.svg" alt="Facebook"></a>
+            <a href="https://instagram.com" target="_blank" rel="noopener noreferrer"><img src="images/icon-instagram.svg" alt="Instagram"></a>
+          </div>
+        </div>
+        <div class="footer-sitemap">
+          <h4>Sitemap</h4>
+          <ul class="footer-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="products.html">Products</a></li>
+            <li><a href="enquiry.html">Enquiry</a></li>
+            <li><a href="contact.html">Contact</a></li>
+          </ul>
+        </div>
+        <div class="footer-contact">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li>hello@sweetharvestbakery.co.za</li>
+            <li>011 555 0177</li>
+            <li>Melville, Johannesburg</li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; 2026 Sweet Harvest Bakery</span>
+        <span>Small business (fictional, for academic use)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="js/script.js"></script>
+</body>
+</html>
