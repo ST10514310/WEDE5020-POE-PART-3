@@ -4,10 +4,10 @@
 Sweet Harvest Bakery — Website Design and Development Project (WEDE5020, Portfolio of Evidence)
 
 ## Student Information
-- **Full Name:** [Student Full Name]
-- **Student Number:** [Student Number]
+- **Full Name:** [Bonolo Sello Mohlabe]
+- **Student Number:** [ST10514310]
 - **Module:** WEDE5020 — Web Design and Development
-- **Group:** [Group, if applicable]
+- **Group:** [Group 1]
 - **Institution:** The Independent Institute of Education (IIE)
 - **Year:** 2026
 
